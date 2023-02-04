@@ -28,13 +28,16 @@ onMounted(() => {
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
+      <img src="/vite.svg" class="logo" alt="Vite logo"/>
     </a>
     <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo"/>
+    </a>
+    <a href="https://own3d.tv/" target="_blank">
+      <img src="./assets/own3d.svg" class="logo own3d" alt="OWN3D logo"/>
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue + OWN3D"/>
 </template>
 
 <style scoped>
@@ -44,10 +47,15 @@ onMounted(() => {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.logo.own3d:hover {
+  filter: drop-shadow(0 0 2em #ff9602aa);
 }
 </style>
