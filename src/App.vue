@@ -1,5 +1,20 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import {onMounted} from "vue";
+
+console.log(`Running ${OWN3D.ext.version} on ${OWN3D.ext.environment}`);
+
+onMounted(() => {
+  OWN3D.ext.onAuthorized((data) => {
+    console.log('onAuthorized', data);
+  });
+
+  OWN3D.ext.onContext((context, changed) => {
+    for (const key of changed) {
+      console.log(`Context changed ${context[key]}`);
+    }
+  });
+});
 </script>
 
 <template>
