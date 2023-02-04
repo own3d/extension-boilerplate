@@ -14,6 +14,14 @@ onMounted(() => {
       console.log(`Context changed ${context[key]}`);
     }
   });
+
+  OWN3D.ext.socket.on('notifysub', (data) => {
+    console.log('Got notify-sub event', data);
+  });
+
+  OWN3D.ext.socket.on('browser-source-updated', (data) => {
+    console.log('Got browser-source-updated event', data);
+  });
 });
 </script>
 
