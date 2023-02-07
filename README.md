@@ -1,4 +1,4 @@
-# Vue 3 + Vite + Extension Helper
+# Vue 3 + Vite + OWN3D Extension Helper
 
 ![Extension Example](extensions-example.png)
 
