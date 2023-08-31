@@ -1,16 +1,33 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import {onMounted} from "vue";
+import { onMounted, ref } from 'vue'
 
 console.log(`Running ${OWN3D.ext.version} on ${OWN3D.ext.environment}`);
 
+const ctx = ref({
+  version: OWN3D.ext.version,
+  environment: OWN3D.ext.environment,
+  language: OWN3D.ext.language,
+  mode: OWN3D.ext.mode,
+  theme: OWN3D.ext.theme,
+});
+
+const user = ref(null);
+
 onMounted(() => {
-  OWN3D.ext.onAuthorized((data) => {
-    console.log('onAuthorized', data);
+  OWN3D.ext.onAuthorized(async (data) => {
+    console.log('On authorized', data);
+    user.value = await fetch('https://id.stream.tv/api/users', {
+      headers: {
+        Accept: 'application/json',
+        Authorization: `Bearer ${data.token}`,
+      },
+    }).then((res) => res.json());
   });
 
   OWN3D.ext.onContext((context, changed) => {
     for (const key of changed) {
+      ctx.value[key] = context[key];
       console.log(`Context changed ${context[key]}`);
     }
   });
@@ -33,11 +50,11 @@ onMounted(() => {
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo"/>
     </a>
-    <a href="https://own3d.tv/" target="_blank">
+    <a href="https://dev.own3d.tv/" target="_blank">
       <img src="./assets/own3d.svg" class="logo own3d" alt="OWN3D logo"/>
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue + OWN3D"/>
+  <HelloWorld msg="Vite + Vue + OWN3D" :context="ctx" :user="user" />
 </template>
 
 <style scoped>
