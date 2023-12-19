@@ -20,7 +20,7 @@ onMounted(() => {
     user.value = await fetch('https://id.stream.tv/api/users', {
       headers: {
         Accept: 'application/json',
-        Authorization: `Bearer ${data.token}`,
+        Authorization: `Bearer ${data.client_token}`,
       },
     }).then((res) => res.json());
   });
