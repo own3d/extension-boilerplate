@@ -2,11 +2,11 @@
 
 ![Extension Example](extensions-example.png)
 
-This template should help get you started developing with Vue 3 in Vite with our Extension Helper. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This template should help get you started developing with Vue 3 in Vite with our OWN3D SDK. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Extension Helper
+## OWN3D SDK
 
-The Extension Helper is a small library that helps you to create extensions for OWN3D. It provides a set of helper functions and a set of OWN3D API functions that you can use in your extensions.
+The OWN3D SDK is a small library that helps you to create extensions for OWN3D. It provides a set of helper functions and a set of OWN3D API functions that you can use in your extensions.
 
 ## Hosted Example
 
