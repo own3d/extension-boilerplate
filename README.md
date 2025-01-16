@@ -7,6 +7,7 @@ This template should help get you started developing with Vue 3 in Vite with our
 ## OWN3D SDK
 
 The OWN3D SDK is a small library that helps you to create extensions for OWN3D. It provides a set of helper functions and a set of OWN3D API functions that you can use in your extensions.
+You can find the SDK documentation [here](https://dev.own3d.tv/docs/extensions/sdk.html).
 
 ## Hosted Example
 
